@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-3 form-group" *ngFor="let item of items">
+      <a [routerLink]="['/detail', item._source.id]" class="item">
+
+        <figure>
+          <img class="img-responsive" src="{{item._source.image}}" />
+          <figcaption><small>{{item._source.item_name}}</small></figcaption>
+
+          <p><strong>{{item._source.item_price | currency:'USD':true }}</strong></p>
+        </figure>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="row text-right form-group">
+    <button class="btn btn-primary btn-lg" (click)="gotoPrevPage()">Previous</button>
+    <button class="btn btn-primary btn-lg" (click)="gotoNextPage()">Next</button>
+  </div>
+
+</div>

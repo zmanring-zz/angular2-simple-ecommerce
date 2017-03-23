@@ -1,0 +1,9 @@
+.item {}
+
+.item small {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  display: inline-block;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,36 @@
+<div class="container-fluid" *ngIf="items">
+  <div class="col-md-12" *ngFor="let item of items">
+
+    <div class="row">
+
+      <figure class="col-md-3">
+        <img class="img-responsive" src="{{item._source.image}}" />
+      </figure>
+
+      <section class="col-md-9">
+        <header>
+          <h1>{{item._source.item_name}}</h1>
+        </header>
+        <p>{{item._source.description}}</p>
+        <h3><strong>{{item._source.item_price | currency:'USD':true }}</strong></h3>
+
+        <section class="col-md-6" *ngIf="item._source.colors.length > 0">
+          <h6>Colors</h6>
+          <ul>
+            <li *ngFor="let color of item._source.colors">{{color}}</li>
+          </ul>
+        </section>
+
+        <section class="col-md-6" *ngIf="item._source.patterns.length > 0">
+          <h6>Patterns</h6>
+          <ul>
+            <li *ngFor="let pattern of item._source.patterns">{{pattern}}</li>
+          </ul>
+        </section>
+
+      </section>
+
+    </div>
+
+  </div>
+</div>
